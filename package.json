@@ -1,0 +1,13 @@
+{
+    "name": "webrtc-dccs",
+    "version": "1.0.0",
+    "description": "WebRTC Client-Server DataChannel",
+    "license": "MIT",
+    "dependencies": {
+      "http-server": "^14.1.0"
+    },
+    "scripts": {
+        
+    }
+  }
+  
