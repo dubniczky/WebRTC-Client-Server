@@ -1,3 +1,5 @@
+import uvicorn
+from argparse import ArgumentParser
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -56,3 +58,17 @@ async def offer(request: Request):
     # Send answer
     return {"sdp": pc.localDescription.sdp, "type": pc.localDescription.type}
 
+
+if __name__ == "__main__":
+    # Read args
+    argp = ArgumentParser(description="WebRTC DataChannel Demo")
+    argp.add_argument("--host", type=str, default="0.0.0.0", help="Host IP for HTTP server (default: 0.0.0.0)")
+    argp.add_argument("--port", type=int, default=8080, help="Port for HTTP server (default: 8080)")
+    argp.add_argument("--silent", type=bool, default=False, help="Supress console logs to increase performance (default: False)")
+    args = argp.parse_args()
+    
+    # Set log level
+    log_level = 'critical' if args.silent else 'info'
+
+    # Start server
+    uvicorn.run(app, host="0.0.0.0", port=args.port, log_level=log_level)
