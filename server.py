@@ -19,7 +19,7 @@ app.add_middleware(
 
 # Read sample image
 file = None
-with open('../../samples/image/image_small.bin', 'rb') as f:
+with open('./data/tower.jpg', 'rb') as f:
     file = f.read()
 
 # WebRTC Offer Endpoint
