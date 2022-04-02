@@ -1,2 +1,6 @@
 # Force shell scripts to use LF line endings
 *.sh text eol=lf
+
+# Handle bin type files with LFS
+*.bin binary
+*.jpg binary
