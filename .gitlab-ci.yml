@@ -1,0 +1,11 @@
+stages:
+  - test
+
+compile-server:
+  stage: test
+  image: python:3.10-slim
+  script:
+    # Install packages
+    - python -m pip install -r requirements.txt
+    # Run compile test
+    - python -m py_compile server.py
