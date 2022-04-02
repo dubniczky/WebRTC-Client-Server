@@ -7,6 +7,7 @@
       "http-server": "^14.1.0"
     },
     "scripts": {
+        "pipinstall": "pip install -r requirements.txt",
         "serve": "npx http-server -d -i -c-1 -p 80 -o /index.html ./client"
     }
   }
