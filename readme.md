@@ -71,3 +71,7 @@ After stering the client service, a browser window will appear, where you can se
 Example:
 
 ![](./assets/client-screenshot.png)
+
+## Acknowledgement
+
+This project was created in association with Mediso Medial Imaging Systems ELTE Laboratories. [Website](https://medisolab.inf.elte.hu/)
