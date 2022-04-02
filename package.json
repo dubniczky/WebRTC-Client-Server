@@ -9,6 +9,7 @@
     "scripts": {
         "pipinstall": "pip install -r requirements.txt",
         "inst-all": "yarn install && yarn pipinstall",
-        "serve": "npx http-server -d -i -c-1 -p 80 -o /index.html ./client"
+        "serve": "npx http-server -d -i -c-1 -p 80 -o /index.html ./client",
+        "channel": "python ./server.py --port 8080"
     }
 }
