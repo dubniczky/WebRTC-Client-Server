@@ -11,5 +11,4 @@
         "inst-all": "yarn install && yarn pipinstall",
         "serve": "npx http-server -d -i -c-1 -p 80 -o /index.html ./client"
     }
-  }
-  
+}
