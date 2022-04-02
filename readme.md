@@ -63,3 +63,11 @@ WebRTC server service:
 ```bash
 yarn channel
 ```
+
+## Testing
+
+After stering the client service, a browser window will appear, where you can set your preferences for the DataChannel, then start testing.
+
+Example:
+
+![](./assets/client-screenshot.png)
