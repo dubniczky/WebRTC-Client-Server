@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WebRTC DataChannel Benchmark</title>
+
+        <script defer src="webrtc.js"></script>
+    </head>
+    <body>
+        <!-- Controls -->
+        <fieldset>
+            <legend>Controls</legend>
+
+            <label for="datachannel-ordering">Ordering</label>
+            <select id="datachannel-ordering">
+                <option value="ordered">Ordered</option>
+                <option selected value="unordered">Unordered</option>
+            </select>
+
+            <br>
+
+            <label for="datachannel-retransmission">Retransmission:</label>
+            <input type="number" id="datachannel-retransmission" value="0">
+            <br>
+            <label for="datachannel-lifetime">Lifetime:</label>
+            <input type="number" id="datachannel-lifetime" value="200"> ms
+
+            <br>
+
+            <select id="datachannel-parameters">
+                <option value='{"ordered": true}'>Ordered, retransmission</option>
+                <option value='{"ordered": false, "maxRetransmits": 0}'>Unordered, no retransmission</option>
+                <option value='{"ordered": false, "maxPacketLifetime": 200}'>Unordered, 200ms lifetime</option>
+            </select>
+
+            <div class="option">
+                <input id="use-stun" type="checkbox"/>
+                <label for="use-stun">Use STUN server</label>
+            </div>
+
+            <br>
+
+            <button id="start-button" onclick="start()">Start</button>
+            <button id="stop-button"  onclick="stop()" disabled>Stop</button>
+            <span id="general-state">Loading.</span>
+        </fieldset>
+
+        <!-- State Table -->
+        <fieldset>
+            <legend>State</legend>
+
+            <table>
+                <tr>
+                    <td>ICE gathering state</td>
+                    <td><code id="ice-gathering-state"></code></td>
+                </tr>
+                <tr>
+                    <td>ICE connection state:</td>
+                    <td><code id="ice-connection-state"></code></td>
+                </tr>
+                <tr>
+                    <td>Signaling state:</td>
+                    <td><code id="signaling-state"></code></td>
+                </tr>
+                <tr>
+                    <td>DataChannel state:</td>
+                    <td><code id="data-channel-state"></code></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <!-- DataChannel Options -->
+        <fieldset>
+            <legend>DataChannel Options</legend>
+
+            <pre id="dc-options"></pre>
+        </fieldset>
+
+        <!-- SDP Offer -->
+        <fieldset>
+            <legend>SDP Offer</legend>
+
+            <pre id="offer-sdp"></pre>
+        </fieldset>
+
+        <!-- SDP Answer -->
+        <fieldset>
+            <legend>SDP Answer</legend>
+
+            <pre id="answer-sdp"></pre>
+        </fieldset>
+
+
+    </body>
+</html>
