@@ -1,8 +1,34 @@
+# CI Testing Pipeline
+
 stages:
-  - test
+  - dependency
+  - build
+
+cache:
+  paths:
+    - .venv/
+    - node_modules/
+
+# Dependency
+
+dependency-node:
+  stage: dependency
+  image: node:14
+  script:
+    - yarn install
+
+# Dependency
+
+dependency-pip:
+  stage: dependency
+  image: python:3.10
+  script:
+    - python -m pip install -r requirements.txt
+
+# Build stage
 
 compile-server:
-  stage: test
+  stage: build
   image: python:3.10
   script:
     # Install packages
