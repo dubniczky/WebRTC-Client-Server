@@ -16,3 +16,44 @@ Please note that the programs might work with earlier versions of these software
 - Yarn 1.22+
 
 Additional packages are required, but they will be installed automatically from `/package.json` and `/requirements.txt`
+
+## Usage
+
+### 1. Using Virtual environment
+
+In case of using venv for python modules, follow these steps. If you do not know what this means, skip this step. This will create and activate the virtual environment in `/.venv/`
+
+Activate venv
+
+```bash
+source ./venv.sh
+```
+
+This also installs dependencies for python, so you may skip the pipinstall in the next step.
+
+### 2. Install Dependencies
+
+```bash
+yarn inst-all
+```
+
+or 
+
+```bash
+yarn install # NodeJS dependencies
+yarn pipinstall # Python dependencies
+```
+
+### 3. Start Services
+
+HTTP client service:
+
+```bash
+yarn serve
+```
+
+WebRTC server service:
+
+```bash
+yarn channel
+```
