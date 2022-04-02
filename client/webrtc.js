@@ -6,6 +6,10 @@ const sdpSemantics = 'unified-plan'
 const dcBinType = 'arraybuffer'
 const stunServers = [
     "stun1.l.google.com:19302",
+    "stun2.l.google.com:19302",
+    "stun3.l.google.com:19302",
+    "stun4.l.google.com:19302",
+    "stun.nextcloud.com:443",
 ]
 
 // Components
