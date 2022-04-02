@@ -3,7 +3,7 @@ stages:
 
 compile-server:
   stage: test
-  image: python:3.10-slim
+  image: python:3.10
   script:
     # Install packages
     - python -m pip install -r requirements.txt
