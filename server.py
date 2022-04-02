@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from aiortc import RTCPeerConnection, RTCSessionDescription
 
 # Create FastAPI app
@@ -7,6 +8,14 @@ app = FastAPI()
 app.mount("/client", StaticFiles(directory="../../client"), name="static")
 
 peer_connections = set()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Read sample image
 file = None
