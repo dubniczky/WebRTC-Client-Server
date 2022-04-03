@@ -56,6 +56,7 @@ async function loadComponents() {
 
 function setupPeerConnection() {
     // Configure connection
+    console.log('Creating PeerConnection..')
     var config = {
         sdpSemantics: sdpSemantics
     }
@@ -80,6 +81,7 @@ function setupPeerConnection() {
     }, false)
     signalingLog.textContent = pc.signalingState
 
+    console.log('PeerConnection Created')
     return pc
 }
 
@@ -143,11 +145,16 @@ async function start() {
     let startTime = performance.now()
     startButton.disabled = true
     stopButton.disabled = false
+    iceConnectionLog.textContent = ''
+    iceGatheringLog.textContent = ''
+    dataChannelLog.textContent = ''
+    signalingLog.textContent = ''
 
     // Create peer connection
     pc = setupPeerConnection()
     
     // Create data channel
+    console.log('Creating DataChannel..')
     var parameters = getDCParams()
     dcoptions.textContent = JSON.stringify(parameters, null, 3)
     dc = pc.createDataChannel('chat', parameters)
@@ -175,6 +182,7 @@ async function start() {
         dataChannelLog.textContent += ' -> closed'
     }
 
+    console.log('Beginning negotiation..')
     await negotiate()
 
     // Calculate performance
