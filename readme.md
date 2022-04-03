@@ -72,6 +72,12 @@ Example:
 
 ![](./assets/client-screenshot.png)
 
+## Known Issues
+
+### 1. Infinite Gathering with VPN
+
+While using a VPN service, it might block the gathering messages, so the gathering phase will never succeed. Turn off your VPN service, or add your browser as an exception (not generally recommended though).
+
 ## Acknowledgement
 
 This project was created in association with Mediso Medial Imaging Systems ELTE Laboratories. [Website](https://medisolab.inf.elte.hu/)
