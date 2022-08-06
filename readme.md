@@ -2,6 +2,12 @@
 
 An implementation of binary communication between a browser and server using WebRTC DataChannel.
 
+<div align="center">
+  <a href="https://gitlab.com/richard-nagy/">
+    <img src="./assets/icon.png" alt="Avatar" width="120"/>
+  </a>
+</div>
+
 ## Support ❤️
 
 If you find the project useful, please consider supporting, or contributing.
